@@ -10,7 +10,7 @@ const VALID_TABS: Tab[] = ['upload', 'chat', 'documents', 'settings'];
 
 function readSavedTab(): Tab {
   const saved = sessionStorage.getItem('docurag-tab');
-  return VALID_TABS.includes(saved as Tab) ? (saved as Tab) : 'upload';
+  return VALID_TABS.includes(saved as Tab) ? (saved as Tab) : 'chat';
 }
 
 export default function App() {
