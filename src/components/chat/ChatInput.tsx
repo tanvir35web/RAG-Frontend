@@ -32,7 +32,7 @@ export function ChatInput({ onSend, isLoading, disabled }: ChatInputProps) {
       <textarea
         ref={textareaRef}
         className={cn(
-          'flex-1 bg-transparent text-sm placeholder-gray-400 dark:placeholder-zinc-600',
+          'flex-1 bg-transparent text-base placeholder-gray-400 dark:placeholder-zinc-600',
           'text-gray-900 dark:text-zinc-100 resize-none outline-none leading-relaxed',
           'min-h-[24px]',
         )}

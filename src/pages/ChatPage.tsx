@@ -45,22 +45,24 @@ export function ChatPage() {
       )}
 
       {/* Messages area */}
-      <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 space-y-6">
-        {messages.length === 0 ? (
-          <EmptyState
-            icon={<Bot size={32} />}
-            title="Ask anything about your documents"
-            description={
-              !hasDocuments
-                ? 'Upload a PDF first, then return here to ask questions.'
-                : `${documents.length} document${documents.length !== 1 ? 's' : ''} ready to query.`
-            }
-          />
-        ) : (
-          messages.map(msg => <MessageBubble key={msg.id} message={msg} />)
-        )}
-        {isLoading && <TypingIndicator />}
-        <div ref={endRef} />
+      <div className="flex-1 overflow-y-auto">
+        <div className="max-w-3xl w-full mx-auto px-4 sm:px-0 py-6 space-y-6">
+          {messages.length === 0 ? (
+            <EmptyState
+              icon={<Bot size={32} />}
+              title="Ask anything about your documents"
+              description={
+                !hasDocuments
+                  ? 'Upload a PDF first, then return here to ask questions.'
+                  : `${documents.length} document${documents.length !== 1 ? 's' : ''} ready to query.`
+              }
+            />
+          ) : (
+            messages.map(msg => <MessageBubble key={msg.id} message={msg} />)
+          )}
+          {isLoading && <TypingIndicator />}
+          <div ref={endRef} />
+        </div>
       </div>
 
       {/* Input area */}
