@@ -134,7 +134,7 @@ export function SettingsPage() {
         {/* About */}
         <div className="mt-10 pt-6 border-t border-gray-200 dark:border-white/[0.06]">
           <p className="text-xs text-gray-400 dark:text-zinc-600 text-center">
-            DocuRAG v1.0 · Powered by Gemini 2.5 Flash + Pinecone
+            DocuRAG v1.0 · Powered by gemini-3.1-flash-lite + Pinecone vector database · Developed by Tanvir
           </p>
         </div>
       </div>

@@ -5,7 +5,11 @@ import { UploadSuccess } from '../components/upload/UploadSuccess';
 import { Alert } from '../components/ui/Alert';
 import { useUpload } from '../hooks/useUpload';
 
-export function UploadPage() {
+interface UploadPageProps {
+  onStartChat: () => void;
+}
+
+export function UploadPage({ onStartChat }: UploadPageProps) {
   const { state, upload, reset } = useUpload();
 
   const isIdle = state.status === 'idle' || state.status === 'error';
@@ -45,7 +49,7 @@ export function UploadPage() {
         {state.status === 'uploading' && <UploadProgress />}
 
         {state.status === 'success' && state.result && (
-          <UploadSuccess result={state.result} onUploadAnother={reset} />
+          <UploadSuccess result={state.result} onUploadAnother={reset} onStartChat={onStartChat} />
         )}
 
         {/* Info card */}
@@ -56,7 +60,7 @@ export function UploadPage() {
           <ul className="space-y-2 text-sm text-gray-500 dark:text-zinc-500">
             {[
               'PDF files with selectable text (not scanned images)',
-              'Maximum file size: 50 MB',
+              'Maximum file size: 5 MB',
               <>Content-Type must be <code className="bg-gray-100 dark:bg-white/[0.06] text-gray-700 dark:text-zinc-400 px-1.5 py-0.5 rounded text-xs">application/pdf</code></>,
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2">

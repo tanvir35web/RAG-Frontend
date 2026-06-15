@@ -1,13 +1,14 @@
-import { CheckCircle2, BookOpen, Layers, Plus } from 'lucide-react';
+import { CheckCircle2, BookOpen, Layers, MessageSquare, Plus } from 'lucide-react';
 import { Button } from '../ui/Button';
 import type { UploadResult } from '../../types';
 
 interface UploadSuccessProps {
   result: UploadResult;
   onUploadAnother: () => void;
+  onStartChat: () => void;
 }
 
-export function UploadSuccess({ result, onUploadAnother }: UploadSuccessProps) {
+export function UploadSuccess({ result, onUploadAnother, onStartChat }: UploadSuccessProps) {
   return (
     <div className="bg-white dark:bg-[#13131e] border border-gray-200 dark:border-white/[0.06] rounded-2xl p-10 flex flex-col items-center gap-5 animate-fade-up">
       <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center">
@@ -34,9 +35,14 @@ export function UploadSuccess({ result, onUploadAnother }: UploadSuccessProps) {
         </div>
       </div>
 
-      <Button onClick={onUploadAnother} leftIcon={<Plus size={15} />}>
-        Upload Another
-      </Button>
+      <div className="flex flex-col items-center gap-3 flex-wrap justify-center">
+        <Button variant="ghost" onClick={onUploadAnother} leftIcon={<Plus size={15} />}>
+          Upload Another
+        </Button>
+        <Button onClick={onStartChat} leftIcon={<MessageSquare size={15} />}>
+          Start Chat
+        </Button>
+      </div>
     </div>
   );
 }

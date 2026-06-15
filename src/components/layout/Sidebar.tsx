@@ -30,7 +30,7 @@ export function Sidebar({ activeTab, onTabChange, className }: SidebarProps) {
   return (
     <aside
       className={cn(
-        'w-56 flex-none flex flex-col',
+        'w-72 flex-none flex flex-col',
         'bg-white dark:bg-[#0c0c14]',
         'border-r border-gray-200 dark:border-white/[0.06]',
         'h-full',

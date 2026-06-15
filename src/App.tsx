@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <AppLayout activeTab={activeTab} onTabChange={handleTabChange}>
-      {activeTab === 'upload'    && <UploadPage />}
+      {activeTab === 'upload'    && <UploadPage onStartChat={() => handleTabChange('chat')} />}
       {activeTab === 'chat'      && <ChatPage />}
       {activeTab === 'documents' && <DocumentsPage />}
       {activeTab === 'settings'  && <SettingsPage />}

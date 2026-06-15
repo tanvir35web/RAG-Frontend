@@ -73,7 +73,7 @@ export function DropZone({ onFileSelected, disabled }: DropZoneProps) {
           {dragging ? 'Release to upload' : 'Drop your PDF here'}
         </p>
         <p className="text-sm text-gray-500 dark:text-zinc-500">
-          or <span className="text-violet-600 dark:text-violet-400 font-medium">click to browse</span> — max 50 MB
+          or <span className="text-violet-600 dark:text-violet-400 font-medium">click to browse</span> — max 5 MB
         </p>
       </div>
     </div>

@@ -48,7 +48,7 @@ export function MobileNav({ activeTab, onTabChange, isOpen, onClose }: MobileNav
       {/* Drawer */}
       <aside
         className={cn(
-          'fixed top-0 left-0 z-50 h-full w-64 flex flex-col md:hidden',
+          'fixed top-0 left-0 z-50 h-full w-full flex flex-col md:hidden',
           'bg-white dark:bg-[#0c0c14]',
           'border-r border-gray-200 dark:border-white/6',
           'transition-transform duration-300 ease-in-out',
