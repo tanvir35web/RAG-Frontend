@@ -4,6 +4,7 @@ import { Layers, Menu } from 'lucide-react';
 import { Sidebar } from './Sidebar';
 import { MobileNav } from './MobileNav';
 import type { Tab } from '../../types';
+import { Analytics } from '@vercel/analytics/next';
 
 interface AppLayoutProps {
   activeTab: Tab;
@@ -22,6 +23,8 @@ export function AppLayout({ activeTab, onTabChange, children }: AppLayoutProps) 
         onTabChange={onTabChange}
         className="hidden md:flex"
       />
+
+      <Analytics/>
 
       <div className="flex-1 min-w-0 flex flex-col overflow-hidden">
         {/* Mobile header — hidden on desktop */}
