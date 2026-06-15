@@ -4,7 +4,7 @@ import { Layers, Menu } from 'lucide-react';
 import { Sidebar } from './Sidebar';
 import { MobileNav } from './MobileNav';
 import type { Tab } from '../../types';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 interface AppLayoutProps {
   activeTab: Tab;
